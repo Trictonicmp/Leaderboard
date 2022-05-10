@@ -13,7 +13,8 @@ class ListView {
     name.innerText = player.name;
     li.append(name);
     let score = document.createElement('span');
-    player.innerText = player.score;
+    score.innerText = player.score;
+    li.append(score);
 
     return li;
   }
