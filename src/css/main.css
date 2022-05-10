@@ -4,7 +4,8 @@ body {
   background-color: rgb(36, 2, 63);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Press Start 2P', cursive;
   color: white;
   text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5);
@@ -61,8 +62,9 @@ main section ul li {
   padding: 0.5em 1em;
   background-color: rgb(36, 2, 63);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  transition: 0.1s transform ease-in,
-  0.1s box-shadow ease-in;
+  transition:
+    0.1s transform ease-in,
+    0.1s box-shadow ease-in;
 }
 
 main section ul li:hover {
@@ -99,9 +101,9 @@ main aside form input {
   color: white;
   background-color: rgb(63, 85, 155);
   opacity: 0.2;
-
-  transition: 0.1s opacity ease-in, 
-  0.1s border-color ease-in;
+  transition:
+    0.1s opacity ease-in,
+    0.1s border-color ease-in;
 }
 
 main aside form input:hover {
@@ -121,20 +123,20 @@ main aside form input:not(:placeholder-shown) {
   opacity: 1;
 }
 
-
 button {
-  padding: .5em 2em;
+  padding: 0.5em 2em;
   background-color: transparent;
   border: 2px solid rgb(136, 174, 255);
-  box-shadow: inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
-  inset 0 -4px 0 0 rgba(0, 0, 0, 0.4);
+  box-shadow:
+    inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
+    inset 0 -4px 0 0 rgba(0, 0, 0, 0.4);
   color: white;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive;
-
-  transition: 0.1s color ease-out, 
-  0.1s border-color ease-out,
-  0.1s box-shadow ease-out;
+  transition:
+    0.1s color ease-out,
+    0.1s border-color ease-out,
+    0.1s box-shadow ease-out;
 }
 
 button:hover {
@@ -143,8 +145,9 @@ button:hover {
 }
 
 button:active {
-  box-shadow: inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
-  inset 0 -8px 0 0 rgba(0, 0, 0, 0.4);
+  box-shadow:
+    inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
+    inset 0 -8px 0 0 rgba(0, 0, 0, 0.4);
   transform: scale(0.95);
   color: rgb(255, 193, 112);
   border-color: rgb(255, 193, 112);

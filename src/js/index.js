@@ -1,8 +1,7 @@
 /* ------------------ CSS ------------------ */
 import '../css/main.css';
 
-
-import { App } from './App.js';
+import App from './App.js';
 
 const app = new App();
 app.init();

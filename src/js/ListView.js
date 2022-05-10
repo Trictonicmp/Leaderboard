@@ -4,15 +4,15 @@ class ListView {
   }
 
   addScoreOf(player) {
-    this.container.append(this.createHTMLnodeOf(player))
+    this.container.append(this.createHTMLnodeOf(player));
   }
 
-  createHTMLnodeOf(player) {
-    let li = document.createElement('li');
-    let name = document.createElement('span');
+  createHTMLnodeOf = (player) => {
+    const li = document.createElement('li');
+    const name = document.createElement('span');
     name.innerText = player.name;
     li.append(name);
-    let score = document.createElement('span');
+    const score = document.createElement('span');
     score.innerText = player.score;
     li.append(score);
 
@@ -24,4 +24,4 @@ class ListView {
   }
 }
 
-export { ListView }
+export default ListView;
