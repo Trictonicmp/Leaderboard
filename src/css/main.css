@@ -104,6 +104,10 @@ main aside form input {
   0.1s border-color ease-in;
 }
 
+main aside form input:hover {
+  opacity: 0.5;
+}
+
 main aside form input:focus {
   stroke: none;
   border: none;
