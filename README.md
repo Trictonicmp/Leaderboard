@@ -1,56 +1,48 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Leaderboard
 
-> Description the project.
+> Leaderboard app using ES6, Async functions and Promises connected to an API
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS
+- Fameworks: N/A
+- Technologies: Linters, Git, GitHub, Webpack
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+## Live Demo
+### Soon
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+* node package manager – to be able to install packages locally.
+* A github Account – to be able to use github actions.
+
+
 ### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+* Open the terminal
+* Run ```cd \path\to\where\you\want\your\local\copy```
+* Clone the repo
+  * Run ```git clone https://github.com/Trictonicmp/to-do-list.git```
+  * Run ```cd README/```
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Amaury Permer**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Trictonicmp](https://github.com/Trictonicmp)
+- Twitter: [@AmauryPermer](https://twitter.com/AmauryPermer)
+- LinkedIn: [amaury-permer](https://www.linkedin.com/in/amaury-permer/)
 
-👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
