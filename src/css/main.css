@@ -99,6 +99,9 @@ main aside form input {
   color: white;
   background-color: rgb(63, 85, 155);
   opacity: 0.2;
+
+  transition: 0.1s opacity ease-in, 
+  0.1s border-color ease-in;
 }
 
 main aside form input:focus {
