@@ -6,8 +6,15 @@ class App {
     this.listView = new ListView();
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
+    this.refreshButton = document.getElementById('refresh-button');
+    
+    
     this.form.submitData = () => {
       this.uploadRecord();
+    }
+    this.refreshButton.onclick = () => {
+      this.listView.clearList();
+      this.loadRecords();
     }
   }
 
@@ -21,7 +28,7 @@ class App {
     .then(data => {
       data.result.forEach(player => {
         this.listView.addScoreOf(player);
-      })
+      }) 
     })
     .catch(error => {
       this.listView.addScoreOf({user: 'Error:', score: 'We could not get the data, pelase try again'});
