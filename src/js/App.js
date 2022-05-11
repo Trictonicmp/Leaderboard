@@ -1,5 +1,6 @@
 import ListView from './ListView.js';
 import FormManager from './FormManager.js';
+import Notification from './Notification.js';
 
 class App {
   constructor() {
@@ -14,6 +15,7 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
+      const notification = new Notification('could not refresh', null);
     };
   }
 
