@@ -20,7 +20,7 @@ class FormManager {
      return this.scoreField.value;
    }
 
-   resetForm() {
+   reset() {
      this.form.reset();
    }
 }

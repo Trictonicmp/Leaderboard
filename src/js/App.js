@@ -32,6 +32,8 @@ class App {
     const record = { user: '', score: 0 };
     record.user = this.form.getUser();
     record.score = this.form.getScore();
+    this.disableButton(this.submitButton, true);
+    this.form.reset();
     this.fetchToAPI(record);
   }
 
@@ -45,13 +47,25 @@ class App {
     })
     .then(response => response.json())
     .then(data => {
-      this.submitButton.classList.remove('button-pending');
-      this.submitButton.disabled = false;
-      console.log(data)
+      this.disableButton(this.submitButton, false);
+      this.listView.clearList();
+      this.loadRecords();
     })
     .catch((error) => {
       console.error('Error:', error);
     });
+  }
+
+  disableButton(button = null, disable) {
+    if(!button) return;
+    if(disable) {
+      button.classList.add('button-pending');
+      button.disable = true;
+    }
+    else {
+      button.classList.remove('button-pending');
+      button.disabled = false;
+    }
   }
 }
 
