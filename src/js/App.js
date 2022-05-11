@@ -16,7 +16,6 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
-      this.notifications.newNotification('could not add the new record, try again!', null);
     };
   }
 
@@ -55,7 +54,7 @@ class App {
       body: JSON.stringify(record),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         this.disableButton(this.submitButton, false);
         this.listView.clearList();
         this.loadRecords();
@@ -65,7 +64,7 @@ class App {
       });
   }
 
-  disableButton(button = null, disable) {
+  disableButton = (button = null, disable) => {
     if (!button) return;
     if (disable) {
       button.classList.add('button-pending');
