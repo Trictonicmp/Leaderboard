@@ -10,7 +10,7 @@ class ListView {
   createHTMLnodeOf = (player) => {
     const li = document.createElement('li');
     const name = document.createElement('span');
-    name.innerText = player.name;
+    name.innerText = player.user;
     li.append(name);
     const score = document.createElement('span');
     score.innerText = player.score;

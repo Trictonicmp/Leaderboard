@@ -152,3 +152,15 @@ button:active {
   color: rgb(255, 193, 112);
   border-color: rgb(255, 193, 112);
 }
+
+.button-pending {
+  opacity: 0.5;
+  border-color: rgba(136, 174, 255, 0.5);
+  color: rgba(136, 174, 255, 0.5);
+}
+
+.button-pending:hover {
+  border-color: rgba(136, 174, 255, 0.5);
+  color: rgba(136, 174, 255, 0.5);
+  cursor: not-allowed;
+}
