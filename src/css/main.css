@@ -178,14 +178,16 @@ button:active {
   align-items: center;
   justify-content: center;
   background-color: #8d1414;
-  box-shadow: inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
-  inset 0 -8px 0 0 rgba(0, 0, 0, 0.4),
-  0 0 2em 0 rgba(0, 0, 0, 0.3);
+  box-shadow:
+    inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
+    inset 0 -8px 0 0 rgba(0, 0, 0, 0.4),
+    0 0 2em 0 rgba(0, 0, 0, 0.3);
   animation: show;
   animation-duration: 2s;
-  animation-timing-function: cubic-bezier(0.000, 0.730, 0.265, 1.015), 
-  linear,
-  cubic-bezier(0.000, 0.730, 0.265, 1.015);;
+  animation-timing-function:
+    cubic-bezier(0, 0.73, 0.265, 1.015),
+    linear,
+    cubic-bezier(0, 0.73, 0.265, 1.015);
 }
 
 .error-notification p {
