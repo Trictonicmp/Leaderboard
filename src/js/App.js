@@ -22,9 +22,21 @@ class App {
   }
 
   init() {
-    this.playersScores.forEach((player) => {
+    /* this.playersScores.forEach((player) => {
       this.listView.addScoreOf(player);
+    }); */
+    this.loadData();
+  }
+
+  loadData() {
+    let retrievedData = null;
+    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
+    .then(response => response.json())
+    .then(data => {
+      retrievedData = data.result;
     });
+
+    return retrievedData;
   }
 
   uploadData() {
