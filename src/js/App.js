@@ -7,11 +7,15 @@ class App {
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
     this.form.submitData = () => {
-      this.uploadData();
+      this.uploadRecord();
     }
   }
 
   init() {
+    this.loadRecords();
+  }
+
+  loadRecords() {
     fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
     .then(response => response.json())
     .then(data => {
@@ -20,11 +24,11 @@ class App {
       })
     })
     .catch(error => {
-      retrievedData = [{user: 'Error:', score: 'We could not get the data, pelase try again'}]
+      this.listView.addScoreOf({user: 'Error:', score: 'We could not get the data, pelase try again'});
     });
   }
 
-  uploadData() {
+  uploadRecord() {
     const record = { user: '', score: 0 };
     record.user = this.form.getUser();
     record.score = this.form.getScore();
