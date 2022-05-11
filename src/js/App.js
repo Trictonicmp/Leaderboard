@@ -3,16 +3,6 @@ import FormManager from './FormManager.js';
 
 class App {
   constructor() {
-    /* this.playersScores = [
-      { user: 'some name', score: 100 },
-      { user: 'some name 2', score: 80 },
-      { user: 'some name 3', score: 60 },
-      { user: 'some name 4', score: 40 },
-      { user: 'some name 5', score: 20 },
-      { user: 'some name 6', score: 0 },
-    ]; */
-    this.playersScores = [];
-
     this.listView = new ListView();
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
@@ -22,44 +12,34 @@ class App {
   }
 
   init() {
-    /* this.playersScores.forEach((player) => {
-      this.listView.addScoreOf(player);
-    }); */
-    this.loadData();
-  }
-
-  loadData() {
-    let retrievedData = null;
     fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
     .then(response => response.json())
     .then(data => {
-      retrievedData = data.result;
+      data.result.forEach(player => {
+        this.listView.addScoreOf(player);
+      })
+    })
+    .catch(error => {
+      retrievedData = [{user: 'Error:', score: 'We could not get the data, pelase try again'}]
     });
-
-    return retrievedData;
   }
 
   uploadData() {
     const record = { user: '', score: 0 };
     record.user = this.form.getUser();
     record.score = this.form.getScore();
-    this.fetchData(record);
+    this.fetchToAPI(record);
   }
 
-  fetchData(record) {
+  fetchToAPI(record) {
     fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/', {
-      method: 'POST', // or 'PUT'
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(record),
     })
-    .then(response => {
-      response.json();
-      this.submitButton.classList.add('button-pending');
-      this.submitButton.disabled = true;
-      console.log(response);
-    })
+    .then(response => response.json())
     .then(data => {
       this.submitButton.classList.remove('button-pending');
       this.submitButton.disabled = false;
