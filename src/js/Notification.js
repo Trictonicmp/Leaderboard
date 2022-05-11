@@ -1,18 +1,20 @@
 class Notification {
-  constructor(message, error) {
+  constructor() {
     this.container = document.querySelector('body');
-    this.notification = this.createNotification(message, error);
-    this.container.append(this.notification);
+  }
+  newNotification(message, error) {
+    const newNotification = this.createNotification(message, error)
+    this.container.append(newNotification);
 
-    this.notification.onanimationend = () => {
-      this.container.removeChild(this.notification);
-    }
+    newNotification.onanimationend = () => {
+      this.container.removeChild(newNotification);
+    };
   }
 
   createNotification(message, error) {
-    let section = document.createElement('section');
-    let p = document.createElement('p');
-    p.innerText = 'Error: ' + message + ' | ' + error;
+    const section = document.createElement('section');
+    const p = document.createElement('p');
+    p.innerText = `Error: ${message} | ${error}`;
     section.append(p);
     section.classList.add('error-notification');
     return section;

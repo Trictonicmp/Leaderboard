@@ -8,6 +8,7 @@ class App {
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
     this.refreshButton = document.getElementById('refresh-button');
+    this.notifications = new Notification();
 
     this.form.submitData = () => {
       this.uploadRecord();
@@ -15,6 +16,7 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
+      this.notifications.newNotification('could not add the new record, try again!', null);
     };
   }
 
@@ -31,7 +33,7 @@ class App {
         });
       })
       .catch((error) => {
-        const notification = new Notification('could not load the records, try again!', error);
+        this.notifications.newNotification('could not load the records, try again!', error);
       });
   }
 
@@ -59,7 +61,7 @@ class App {
         this.loadRecords();
       })
       .catch((error) => {
-        const notification = new Notification('could not add the new record, try again!', error);
+        this.notifications.newNotification('could not add the new record, try again!', error);
       });
   }
 
