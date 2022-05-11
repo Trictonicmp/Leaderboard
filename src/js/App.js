@@ -23,8 +23,8 @@ class App {
     this.loadRecords();
   }
 
-  loadRecords() {
-    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
+  async loadRecords() {
+    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
       .then((response) => response.json())
       .then((data) => {
         data.result.forEach((player) => {
