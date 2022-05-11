@@ -7,7 +7,7 @@ class FormManager {
     this.form.onsubmit = (event) => {
       event.preventDefault();
       this.submitData();
-    }
+    };
   }
 
    submitData = () => { }
