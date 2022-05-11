@@ -12,7 +12,7 @@ class Notification {
   createNotification(message, error) {
     let section = document.createElement('section');
     let p = document.createElement('p');
-    p.innerText = 'Error: ' + message + '<br> | ' + error;
+    p.innerText = 'Error: ' + message + ' | ' + error;
     section.append(p);
     section.classList.add('error-notification');
     return section;
