@@ -15,7 +15,6 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
-      const notification = new Notification('could not refresh', null);
     };
   }
 
@@ -32,7 +31,7 @@ class App {
         });
       })
       .catch((error) => {
-        this.listView.addScoreOf({ user: 'Error: ', score: `We could not get the data, pelase try again${error}` });
+        const notification = new Notification('could not load the records, try again!', error);
       });
   }
 
@@ -60,7 +59,7 @@ class App {
         this.loadRecords();
       })
       .catch((error) => {
-        console.error('Error:', error);
+        const notification = new Notification('could not add the new record, try again!', error);
       });
   }
 
