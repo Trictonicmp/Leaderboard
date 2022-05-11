@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Press+Start+2P&display=swap');
+
+body {
+  background-color: rgb(11, 2, 63);
+}
+
+h1,
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5);
+  word-wrap: break-word;
+}
+
+h1 {
+  color: rgb(243, 255, 78);
+}
+
+main {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5em;
+}
+
+main header {
+  padding: 1em 2em;
+  width: 100%;
+}
+
+main section {
+  max-width: 40em;
+  flex: 1 1 360px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+main section div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main section ul {
+  width: 100%;
+  border: 3px solid rgb(0, 132, 255);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Jura', sans-serif;
+  color: white;
+}
+
+main section ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  background-color: rgb(11, 2, 63);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    0.1s transform ease-in,
+    0.1s box-shadow ease-in;
+}
+
+main section ul li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 4px rgb(247, 255, 134);
+}
+
+main section ul li:nth-child(odd) {
+  background-color: #151351;
+}
+
+main aside {
+  max-width: 30em;
+  flex: 1 1 300px;
+}
+
+main aside h2 {
+  width: 100%;
+}
+
+main aside form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+main aside form input {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 0.8em;
+  border: 2px solid #151351;
+  font-family: 'Jura', sans-serif;
+  color: white;
+  background-color: #151351;
+  transition:
+    0.1s opacity ease-in,
+    0.1s border-color ease-in;
+}
+
+main aside form input:hover {
+  background-color: rgba(33, 64, 163, 0.5);
+}
+
+main aside form input:focus {
+  stroke: none;
+  border: none;
+  outline: none;
+}
+
+main aside form input:focus,
+main aside form input:not(:placeholder-shown) {
+  background-color: rgb(33, 64, 163);
+  border: 2px solid rgb(247, 255, 134);
+  opacity: 1;
+}
+
+button {
+  padding: 0.5em 2em;
+  background-color: transparent;
+  border: 2px solid rgb(136, 174, 255);
+  box-shadow:
+    inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
+    inset 0 -4px 0 0 rgba(0, 0, 0, 0.4);
+  color: white;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  transition:
+    0.1s color ease-out,
+    0.1s border-color ease-out,
+    0.1s box-shadow ease-out;
+}
+
+button:hover {
+  color: rgb(253, 255, 112);
+  border-color: rgb(253, 255, 112);
+}
+
+button:active {
+  box-shadow:
+    inset 0 4px 0 0 rgba(147, 101, 255, 0.4),
+    inset 0 -8px 0 0 rgba(0, 0, 0, 0.4),
+    0 0 2em 0 white;
+  transform: scale(0.95);
+  color: rgb(255, 193, 112);
+  border-color: rgb(255, 193, 112);
+}

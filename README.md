@@ -29,10 +29,13 @@ To get a local copy up and running follow these simple example steps.
 * Open the terminal
 * Run ```cd \path\to\where\you\want\your\local\copy```
 * Clone the repo
-  * Run ```git clone https://github.com/Trictonicmp/to-do-list.git```
-  * Run ```cd README/```
+  * Run ```git clone https://github.com/Trictonicmp/Leaderboard.git```
+  * Run ```cd Leaderboard```
+* Install dependencies  
+  * Run ```npm install```
 
-
+### Build
+Run ```npm run build```
 
 ## Authors
 
