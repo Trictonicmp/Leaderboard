@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Press+Start+2P&display=swap');
 
 body {
-  background-color: rgb(36, 2, 63);
+  background-color: rgb(11, 2, 63);
 }
 
 h1,
@@ -13,7 +13,7 @@ h2 {
 }
 
 h1 {
-  color: rgb(247, 255, 134);
+  color: rgb(243, 255, 78);
 }
 
 main {
@@ -60,7 +60,7 @@ main section ul li {
   display: flex;
   justify-content: space-between;
   padding: 0.5em 1em;
-  background-color: rgb(36, 2, 63);
+  background-color: rgb(11, 2, 63);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   transition:
     0.1s transform ease-in,
@@ -73,7 +73,7 @@ main section ul li:hover {
 }
 
 main section ul li:nth-child(odd) {
-  background-color: rgb(41, 35, 95);
+  background-color: #151351;
 }
 
 main aside {
@@ -96,18 +96,17 @@ main aside form input {
   width: 100%;
   font-size: 1.1em;
   padding: 0.8em;
-  border: 2px solid rgb(63, 85, 155);
+  border: 2px solid #151351;
   font-family: 'Jura', sans-serif;
   color: white;
-  background-color: rgb(63, 85, 155);
-  opacity: 0.2;
+  background-color: #151351;
   transition:
     0.1s opacity ease-in,
     0.1s border-color ease-in;
 }
 
 main aside form input:hover {
-  opacity: 0.5;
+  background-color: rgba(33, 64, 163, 0.5);
 }
 
 main aside form input:focus {
