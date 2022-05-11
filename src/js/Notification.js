@@ -15,7 +15,7 @@ class Notification {
   createNotification = (message, error) => {
     const section = document.createElement('section');
     const p = document.createElement('p');
-    p.innerText = `Error: ${message} | ${error}`;
+    p.innerHTML = `Error: ${message} <br>| ${error}`;
     section.append(p);
     section.classList.add('error-notification');
     return section;
