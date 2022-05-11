@@ -45,8 +45,8 @@ class App {
     this.fetchToAPI(record);
   }
 
-  fetchToAPI(record) {
-    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/', {
+  async fetchToAPI(record) {
+    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
