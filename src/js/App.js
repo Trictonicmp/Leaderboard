@@ -10,7 +10,8 @@ class App {
     this.submitButton = document.getElementById('submit-button');
     this.refreshButton = document.getElementById('refresh-button');
     this.notifications = new Notification();
-    this.highScore = new HighScore();
+    this.highScoreOverlay = new HighScore();
+    this.highestScore = this.getHighestScore();
 
     this.form.submitData = () => {
       this.uploadRecord();
@@ -18,7 +19,6 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
-      this.highScore.newHighScore();
     };
   }
 
@@ -32,6 +32,10 @@ class App {
       .then((data) => {
         let sortedList = this.sortList(data.result);
         this.displayScores(sortedList);
+        if(sortedList[0].score <= this.highestScore.score) {
+          this.highScoreOverlay.newOverlay();
+          this.saveHighestScore(sortedList[0]);
+        }
       })
       .catch((error) => {
         this.notifications.newNotification('could not load the records, try again!', error);
@@ -89,6 +93,15 @@ class App {
       button.classList.remove('button-pending');
       button.disabled = false;
     }
+  }
+
+  saveHighestScore(record) {
+    localStorage.setItem('highScore', JSON.stringify(record));
+  }
+
+  getHighestScore() {
+    if(!localStorage.getItem('highScore')) return {user: '', score: -0 };
+    this.highestScore = JSON.parse(localStorage.getItem('highScore'));
   }
 }
 

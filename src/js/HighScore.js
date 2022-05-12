@@ -3,7 +3,7 @@ class HighScore {
     this.container = document.querySelector('body');
   }
 
-  newHighScore(message, error) {
+  newOverlay(message, error) {
     const newHighScoreOverlay = this.createOverlay();
     this.container.append(newHighScoreOverlay);
 
