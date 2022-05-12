@@ -33,7 +33,7 @@ class App {
       .then((data) => {
         let sortedList = this.sortList(data.result);
         this.displayScores(sortedList);
-        if(sortedList[0].score >= this.highestScore.score) {
+        if(parseInt(sortedList[0].score) > parseInt(this.highestScore.score)) {
           this.highScoreOverlay.newOverlay();
           this.saveHighestScore(sortedList[0]);
         }
@@ -51,7 +51,7 @@ class App {
 
   sortList(scoreList) {
     let sortedList = scoreList.sort((playerA, playerB) => {
-      return (playerA.score > playerB.score) ? -1: 1;
+      return (parseInt(playerA.score) > parseInt(playerB.score)) ? -1: 1;
     })
 
     return sortedList;
@@ -102,7 +102,8 @@ class App {
 
   getHighestScore() {
     if(!localStorage.getItem('highScore')) return {user: '', score: -0 };
-    this.highestScore = JSON.parse(localStorage.getItem('highScore'));
+    let highestScore = JSON.parse(localStorage.getItem('highScore'));
+    return highestScore;
   }
 }
 
