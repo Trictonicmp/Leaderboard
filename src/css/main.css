@@ -38,6 +38,9 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 5em;
+  animation: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 main header {
