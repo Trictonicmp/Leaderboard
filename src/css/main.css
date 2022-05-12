@@ -83,6 +83,14 @@ main section ul li:nth-child(odd) {
   background-color: #151351;
 }
 
+main section ul li span:nth-child(1) {
+  font-weight: bold;
+}
+
+main section ul li span:nth-child(2) {
+  color: rgb(243, 255, 78);
+}
+
 main aside {
   max-width: 30em;
   flex: 1 1 300px;
