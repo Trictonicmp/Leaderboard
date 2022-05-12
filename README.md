@@ -9,10 +9,13 @@
 
 - HTML, CSS
 - Fameworks: N/A
-- Technologies: Linters, Git, GitHub, Webpack
+- Technologies: Linters, Git, GitHub, Webpack, Leaderboard API service
+
+## Screenshots
+![screenshot leaderboard](https://user-images.githubusercontent.com/11634112/168162532-b802632e-32ef-48b1-a411-ddb2bc68c4c0.png)
 
 ## Live Demo
-### Soon
+### [Here!!](https://trictonicmp.github.io/Leaderboard/)
 
 
 ## Getting Started
@@ -51,7 +54,7 @@ Run ```npm run build```
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Trictonicmp/Leaderboard/issues).
 
 ## Show your support
 
@@ -59,9 +62,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Leaderboard API service to store and retrieve records
+  - More info: [Here](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) 
 
 ## 📝 License
 

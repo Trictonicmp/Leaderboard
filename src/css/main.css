@@ -4,10 +4,22 @@
 body {
   min-height: 100vh;
   background-color: rgb(11, 2, 63);
-  background-image: url(../images/pixel-art-gradient.svg);
-  background-position: bottom;
-  background-size: 1.5em;
-  background-repeat: repeat no-repeat;
+  background-image:
+    url(../images/spaceship.png),
+    url(../images/pixel-art-gradient.svg);
+  background-position:
+    right bottom,
+    left bottom;
+  background-size:
+    18em,
+    2em;
+  background-repeat:
+    no-repeat no-repeat,
+    repeat no-repeat;
+  animation: body-animation;
+  animation-duration: 4s;
+  animation-iteration-count: 3.5;
+  animation-timing-function: ease-in-out;
 }
 
 h1,
@@ -29,6 +41,9 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 5em;
+  animation: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 main header {

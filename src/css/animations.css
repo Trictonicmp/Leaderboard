@@ -37,3 +37,35 @@
     transform: scale(0.5);
   }
 }
+
+@keyframes body-animation {
+  0% {
+    background-position:
+      90% bottom,
+      left 103%;
+  }
+
+  50% {
+    background-position:
+      right bottom,
+      left bottom;
+  }
+
+  100% {
+    background-position:
+      90% bottom,
+      left 103%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
