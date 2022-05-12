@@ -5,6 +5,7 @@ import HighScore from './HighScore.js';
 
 class App {
   constructor() {
+    this.APIid = 'PonNABo4rAmKIgYZvp3D';
     this.listView = new ListView();
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
@@ -27,12 +28,12 @@ class App {
   }
 
   async loadRecords() {
-    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
+    await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.APIid}/scores/`)
       .then((response) => response.json())
       .then((data) => {
         let sortedList = this.sortList(data.result);
         this.displayScores(sortedList);
-        if(sortedList[0].score <= this.highestScore.score) {
+        if(sortedList[0].score >= this.highestScore.score) {
           this.highScoreOverlay.newOverlay();
           this.saveHighestScore(sortedList[0]);
         }
@@ -66,7 +67,7 @@ class App {
   }
 
   async fetchToAPI(record) {
-    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/', {
+    await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.APIid}/scores/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
