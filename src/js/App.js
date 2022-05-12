@@ -31,9 +31,9 @@ class App {
     await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.APIid}/scores/`)
       .then((response) => response.json())
       .then((data) => {
-        let sortedList = this.sortList(data.result);
+        const sortedList = this.sortList(data.result);
         this.displayScores(sortedList);
-        if(parseInt(sortedList[0].score) > parseInt(this.highestScore.score)) {
+        if (parseInt(sortedList[0].score, 10) > parseInt(this.highestScore.score, 10)) {
           this.highScoreOverlay.newOverlay();
           this.saveHighestScore(sortedList[0]);
         }
@@ -50,9 +50,7 @@ class App {
   }
 
   sortList(scoreList) {
-    let sortedList = scoreList.sort((playerA, playerB) => {
-      return (parseInt(playerA.score) > parseInt(playerB.score)) ? -1: 1;
-    })
+    const sortedList = scoreList.sort((playerA, playerB) => ((parseInt(playerA.score, 10) > parseInt(playerB.score, 10)) ? -1 : 1));
 
     return sortedList;
   }
@@ -101,8 +99,8 @@ class App {
   }
 
   getHighestScore() {
-    if(!localStorage.getItem('highScore')) return {user: '', score: -0 };
-    let highestScore = JSON.parse(localStorage.getItem('highScore'));
+    if (!localStorage.getItem('highScore')) return { user: '', score: -0 };
+    const highestScore = JSON.parse(localStorage.getItem('highScore'));
     return highestScore;
   }
 }
