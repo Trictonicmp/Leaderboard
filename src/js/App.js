@@ -49,8 +49,9 @@ class App {
     });
   }
 
-  sortList(scoreList) {
-    const sortedList = scoreList.sort((playerA, playerB) => ((parseInt(playerA.score, 10) > parseInt(playerB.score, 10)) ? -1 : 1));
+  sortList = (scoreList) => {
+    const sortedList = scoreList.sort((playerA, playerB) => (
+      (parseInt(playerA.score, 10) > parseInt(playerB.score, 10)) ? -1 : 1));
 
     return sortedList;
   }
@@ -94,11 +95,11 @@ class App {
     }
   }
 
-  saveHighestScore(record) {
+  saveHighestScore = (record) => {
     localStorage.setItem('highScore', JSON.stringify(record));
   }
 
-  getHighestScore() {
+  getHighestScore = () => {
     if (!localStorage.getItem('highScore')) return { user: '', score: -0 };
     const highestScore = JSON.parse(localStorage.getItem('highScore'));
     return highestScore;

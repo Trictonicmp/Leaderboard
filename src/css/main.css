@@ -225,13 +225,13 @@ button:active {
   text-align: center;
   font-size: 4em;
   color: rgb(243, 255, 78);
-  text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.8),
-  4px 4px red;
-
+  text-shadow:
+    0 0 0.5em rgba(255, 255, 255, 0.8),
+    4px 4px red;
   animation: high-score;
   animation-duration: 2s;
   animation-timing-function:
     cubic-bezier(0, 0.73, 0.265, 1.015),
     linear,
-    cubic-bezier(0, 0.73, 0.265, 1.015); 
+    cubic-bezier(0, 0.73, 0.265, 1.015);
 }
