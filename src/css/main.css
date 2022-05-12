@@ -2,7 +2,12 @@
 @import url('animations.css');
 
 body {
+  min-height: 100vh;
   background-color: rgb(11, 2, 63);
+  background-image: url(../images/pixel-art-gradient.svg);
+  background-position: bottom;
+  background-size: 1.5em;
+  background-repeat: repeat no-repeat;
 }
 
 h1,
