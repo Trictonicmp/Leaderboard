@@ -27,13 +27,26 @@ class App {
     await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PonNABo4rAmKIgYZvp3D/scores/')
       .then((response) => response.json())
       .then((data) => {
-        data.result.forEach((player) => {
-          this.listView.addScoreOf(player);
-        });
+        let sortedList = this.sortList(data.result);
+        this.displayScores(sortedList);
       })
       .catch((error) => {
         this.notifications.newNotification('could not load the records, try again!', error);
       });
+  }
+
+  displayScores(scoreList) {
+    scoreList.forEach((player) => {
+      this.listView.addScoreOf(player);
+    });
+  }
+
+  sortList(scoreList) {
+    let sortedList = scoreList.sort((playerA, playerB) => {
+      return (playerA.score > playerB.score) ? -1: 1;
+    })
+
+    return sortedList;
   }
 
   uploadRecord() {
