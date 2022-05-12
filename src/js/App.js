@@ -5,7 +5,7 @@ import HighScore from './HighScore.js';
 
 class App {
   constructor() {
-    this.APIid = 'PonNABo4rAmKIgYZvp3D';
+    this.APIid = 'f8MC31icYQbzKZL6h4zd';
     this.listView = new ListView();
     this.form = new FormManager();
     this.submitButton = document.getElementById('submit-button');
