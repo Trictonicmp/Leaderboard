@@ -15,3 +15,25 @@
     transform: translate(-50%, 100%);
   }
 }
+
+@keyframes high-score {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  12.5% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  87.5% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

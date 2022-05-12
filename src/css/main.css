@@ -2,7 +2,12 @@
 @import url('animations.css');
 
 body {
+  min-height: 100vh;
   background-color: rgb(11, 2, 63);
+  background-image: url(../images/pixel-art-gradient.svg);
+  background-position: bottom;
+  background-size: 1.5em;
+  background-repeat: repeat no-repeat;
 }
 
 h1,
@@ -76,6 +81,14 @@ main section ul li:hover {
 
 main section ul li:nth-child(odd) {
   background-color: #151351;
+}
+
+main section ul li span:nth-child(1) {
+  font-weight: bold;
+}
+
+main section ul li span:nth-child(2) {
+  color: rgb(243, 255, 78);
 }
 
 main aside {
@@ -199,4 +212,26 @@ button:active {
   color: white;
   text-align: center;
   font-family: 'Jura', sans-serif;
+}
+
+.new-highscore {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.new-highscore h2 {
+  text-align: center;
+  font-size: 4em;
+  color: rgb(243, 255, 78);
+  text-shadow:
+    0 0 0.5em rgba(255, 255, 255, 0.8),
+    4px 4px red;
+  animation: high-score;
+  animation-duration: 2s;
+  animation-timing-function:
+    cubic-bezier(0, 0.73, 0.265, 1.015),
+    linear,
+    cubic-bezier(0, 0.73, 0.265, 1.015);
 }
