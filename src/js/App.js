@@ -1,6 +1,7 @@
 import ListView from './ListView.js';
 import FormManager from './FormManager.js';
 import Notification from './Notification.js';
+import HighScore from './HighScore.js';
 
 class App {
   constructor() {
@@ -9,6 +10,7 @@ class App {
     this.submitButton = document.getElementById('submit-button');
     this.refreshButton = document.getElementById('refresh-button');
     this.notifications = new Notification();
+    this.highScore = new HighScore();
 
     this.form.submitData = () => {
       this.uploadRecord();
@@ -16,6 +18,7 @@ class App {
     this.refreshButton.onclick = () => {
       this.listView.clearList();
       this.loadRecords();
+      this.highScore.newHighScore();
     };
   }
 
