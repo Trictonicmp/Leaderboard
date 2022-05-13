@@ -28,19 +28,20 @@ class App {
   }
 
   async loadRecords() {
-    await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.APIid}/scores/`)
-      .then((response) => response.json())
-      .then((data) => {
-        const sortedList = this.sortList(data.result);
-        this.displayScores(sortedList);
-        if (parseInt(sortedList[0].score, 10) > parseInt(this.highestScore.score, 10)) {
-          this.highScoreOverlay.newOverlay();
-          this.saveHighestScore(sortedList[0]);
-        }
-      })
-      .catch((error) => {
-        this.notifications.newNotification('could not load the records, try again!', error);
-      });
+    try {
+      const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.APIid}/scores/`);
+      const scoreList = await response.json();
+      const sortedList = this.sortList(scoreList.result);
+      this.displayScores(sortedList);
+
+      if (parseInt(sortedList[0].score, 10) > parseInt(this.highestScore.score, 10)) {
+        this.highScoreOverlay.newOverlay();
+        this.saveHighestScore(sortedList[0]);
+      }
+    }
+    catch(error) {
+      this.notifications.newNotification('could not load the records, try again!', error);
+    }
   }
 
   displayScores(scoreList) {
